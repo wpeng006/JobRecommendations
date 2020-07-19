@@ -1,5 +1,10 @@
-C:\Users\Weihan\eclipse-workspace\Project\summer2020\jupiter\src\main\java\entity\Item.java
-C:\Users\Weihan\eclipse-workspace\Project\summer2020\jupiter\src\main\java\rpc\RpcHelper.java
-C:\Users\Weihan\eclipse-workspace\Project\summer2020\jupiter\src\main\java\rpc\Recommendation.java
-C:\Users\Weihan\eclipse-workspace\Project\summer2020\jupiter\src\main\java\external\GitHubClient.java
-C:\Users\Weihan\eclipse-workspace\Project\summer2020\jupiter\src\main\java\rpc\SearchItem.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\rpc\ItemHistory.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\external\GitHubClient.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\external\MonkeyLearnClient.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\rpc\RpcHelper.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\entity\Item.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\db\MySQLTableCreation.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\db\MySQLConnection.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\rpc\Recommendation.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\db\MySQLDBUtil.java
+C:\Users\Weihan\git\JobRecommendations\jupiter\src\main\java\rpc\SearchItem.java
