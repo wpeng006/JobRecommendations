@@ -179,5 +179,74 @@ public class MySQLConnection {
 		return keywords;
 	}
 
+	//get full name of a userId
+	public String getFullname(String userId) {
+		if (conn == null) {
+			System.err.println("DB connection failed");
+			return null;
+		}
+		String name = "";
+		String sql = "SELECT first_name, last_name FROM users WHERE user_id = ?";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1,  userId);
+			ResultSet rs = statement.executeQuery();
+			if (rs.next()) {
+				name = rs.getString("first_name") + " " + rs.getString("last_name");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return name;
+	}
+	
+	
+	//verify if the userId and password exist and match in db
+	public boolean verifyLogin(String userId, String password) {
+		if (conn == null) {
+			System.err.println("DB connection failed");
+			return false;
+		}
+		
+		String sql = "SELECT user_id FROM users WHERE user_id = ? AND password = ?";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1,  userId);
+			statement.setString(2,  password);
+			ResultSet rs = statement.executeQuery();
+			return rs.next();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	//add a user with userId,password,first,last name into db
+	public boolean addUser(String userId, String password, String firstname, String lastname) {
+		if (conn == null) {
+			System.err.println("DB connection failed");
+			return false;
+		}
+		
+		String sql = "INSERT IGNORE INTO users VALUES (?, ?, ?, ?)";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1,  userId);
+			statement.setString(2,  password);
+			statement.setString(3,  firstname);
+			statement.setString(4,  lastname);
+			return statement.executeUpdate() == 1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 	
 }
